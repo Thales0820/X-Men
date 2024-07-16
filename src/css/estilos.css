@@ -4,6 +4,24 @@ body{
     color: #ffffff;
 }
 
+body::-webkit-scrollbar {
+    width: 8px;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2); /* Cor do "polegar" da barra de rolagem */
+    border-radius: 4px;
+}
+  
+body::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4); /* Cor do "polegar" da barra de rolagem quando em hover */
+}
+  
+body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); /* Cor da "trilha" da barra de rolagem */
+    border-radius: 4px;
+}
+
 body::before{
     content: "";
     background-image: url(../imagens/bg-desktop.jpg);
@@ -21,6 +39,11 @@ body::before{
     display: flex;
     justify-content: center;
 }
+
+/* .logo {
+    width: 100px;
+    height: 100px;
+} */
 
 .selecao-de-personagens{
     display: flex;
@@ -43,9 +66,13 @@ body::before{
     align-items: center;
     max-width: 585px;
     gap: 25px;
+    height: 500px;
+    overflow-y: hidden;
+    position: relative;
 }
 
 .selecao-de-personagens .personagens .titulo{
+    position: sticky;
     font-size: 20px;
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -54,8 +81,17 @@ body::before{
     text-align: center;
 }
 
+.lista-de-personagens {
+    overflow-y: auto;
+}
+
+.lista-de-personagens li {
+    margin-top: 25px;
+    margin-bottom: -20px;
+}
+
 .lista-de-personagens .personagem img{
-    width: 100%;
+    width: 110px;
     height: 100%;
 }
 
@@ -66,11 +102,34 @@ body::before{
 .personagem-selecionado{
     text-align: center;
     max-height: 530px;
+    margin-left: 50px;
+}
+
+.lista-de-personagens::-webkit-scrollbar {
+    width: 8px;
+}
+  
+.lista-de-personagens::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2); /* Cor do "polegar" da barra de rolagem */
+    border-radius: 4px;
+}
+  
+.lista-de-personagens::-webkit-scrollbar-thumb:hover {
+    background: rgba(71, 244, 255, 0.8); /* Cor do "polegar" da barra de rolagem quando em hover */
+}
+  
+.lista-de-personagens::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); /* Cor da "trilha" da barra de rolagem */
+    border-radius: 4px;
 }
 
 .personagem-selecionado .personagem-grande{
     width: 430px;
     height: 430px;
+}
+
+.personagem-selecionado .informacoes-personagens {
+    width: 500px;
 }
 
 .personagem-selecionado .nome-personagem{
@@ -84,5 +143,5 @@ body::before{
     line-height: 22px;
     text-align: center;
     margin-top: 20px;
-    width: 420px;
+    width: 100%;
 }
